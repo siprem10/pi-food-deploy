@@ -1,0 +1,62 @@
+:root {
+    --border: 1px solid grey;
+    --borderFocus: 1px solid rgba(0, 188, 212, 1);
+}
+
+.filterContainer{
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    width: fit-content;
+}
+
+    .filterDiv{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .filterDiv select{
+        height: 31px;
+        width: 214px;
+        font-family: var(--gFilterFont);
+        font-size: 17px;
+        text-transform: capitalize;
+        outline: none;
+        background-color: white;
+        cursor: pointer;    
+        padding-left: 10px;
+        padding-right: 10px;
+        background-image: url("../../assets/ic_menu.png");
+        background-size: 10px;
+        background-repeat: no-repeat;
+        background-position-x: 95%;
+        background-position-y: 50%;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        transition: transform 250ms ease, box-shadow 250ms ease;
+    }
+    
+        .filterDiv select:focus{
+            text-transform: capitalize;
+            outline: none;
+            background-color: white;            
+        }
+
+    .filterDiv option{
+        font-size: 17px;
+        border: var(--border);
+        background-color: white;
+    }
+
+/* @media only screen and (max-width: 580px) {
+
+    .filterDiv select {        
+        font-size: 16px;
+    }
+
+    .filterDiv option {        
+        font-size: 16px;
+    }
+} */

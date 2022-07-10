@@ -1,0 +1,21 @@
+.notSearchDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+    .notSearchFlex {
+        background-color: transparent;
+    }
+
+        .notSearchFlex img {
+            height: 200px;
+            width: 400px;
+        }
+
+
+        .notSearchFlex p {
+            font-family: var(--headlinesFont);
+            font-size: 40px;
+
+        }

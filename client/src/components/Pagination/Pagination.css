@@ -1,0 +1,71 @@
+:root {
+    
+    --itemSelect: rgba(255, 113, 78, 1);
+    --itemSelectHover: rgb(255, 78, 78);   
+    --itemNotSelect: white;
+    --itemNotSelectHover: rgba(255, 113, 78, 1);
+    --txtNotSelectHover: rgba(255, 113, 78, 1);
+    --square:rgba(221, 221, 221, 1);
+}
+
+.pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+/* item seleccionado */
+.pagination .active {
+    color: white;
+    background-color: var(--itemSelect);
+    transition: all 0.3s ;
+}
+    /* hover */
+    .pagination .active:hover {
+        color: white;
+        background-color: var(--itemSelectHover);
+    }
+
+    /* presionado */
+    .pagination p:active:hover {
+        background-color: var(--itemSelectHover);
+        color: white;
+        transition: all .2s ;
+    }
+
+
+    /* deselect */
+    .pagination p {
+        width: 15px;
+        text-align: center;
+        padding: 8px 16px;
+        text-decoration: none;
+        border: 1px solid var(--square);
+        background-color: var(--itemNotSelect);
+        cursor: pointer;
+    }
+        /* hover */
+        .pagination p:hover {
+            color: var(--txtNotSelectHover);
+            font-weight: 800;
+            transition: all 0.2s;
+        }
+
+        /* presionado */
+        .pagination p:active {
+            width: 30px;
+            background-color: var(--itemNotSelectHover);
+            border: 1px solid var(--pagActive);
+        }
+
+    /* corners al primer y ultimo */
+    .pagination p:first-child {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+
+    .pagination p:last-child {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }

@@ -1,0 +1,20 @@
+.homeContainer{
+    display: flex;
+    flex-direction: column;
+    /* background-color: aquamarine; */
+}
+
+.homeContainer .headerDiv{
+    /* background-color: blue; */
+}
+
+.homeContainer .PagDiv{
+    height: 40px;
+    margin-top: 10px;
+    /* background-color: red; */
+}
+
+.homeContainer .CardsDiv{
+    margin-top: 30px;
+   /*  background-color: yellow; */
+}

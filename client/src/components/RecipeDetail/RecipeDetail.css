@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400,600,700|Work+Sans:100,200,300,400,500,600');
+:root {
+    --headlinesFont: 'Josefin Sans', sans-serif;
+    --bodyFont: 'Work Sans', sans-serif;
+    --white: #fff;
+    --txtTitleDiets: rgba(255, 113, 78, 1);
+    --txtDiets: rgba(50, 50, 50, 1);
+    --buttonBack: rgba(255, 113, 78, 1);
+    --buttonShadow: rgba(255, 113, 78, 0.3);
+}
+
+.recipeCardD {
+    display: flex;
+    flex-direction: column;
+    width: 1000px;
+    height: fit-content;
+    background: var(--white);
+    box-shadow: 0px 0px 30px 0 rgb(0 0 0 / 38%);
+    overflow: hidden;
+    word-wrap: break-word; /* crea salto de lineas si el txt es largo */
+    margin: 10px 2% 10px 2%; /* separaciones */
+    transition: all 0.2s;
+    padding-bottom: 20px;
+    border-radius: 10px;  
+    margin-top: 30px;
+    margin-bottom: 30px; 
+}
+
+.recipeCardD:hover {
+    transform: scale(1.01);
+}
+
+.recipeHeaderD {
+    /* height: 40%; */
+    height: 500px;
+    width: 100%;
+    box-shadow: 0 0 88px 0 rgba(0, 0, 0, 0.1607843137254902);
+}
+
+.recipeCardD img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.recipeContainerTitleD {
+    height: fit-content;
+    width: 100%;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.recipeContainerTitleD h3 {
+    height: 100%;
+    width: 100%;
+    text-align: left;
+    font-family: var(--headlinesFont);
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.recipeRowD {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    /* background-color: aquamarine; */
+}
+
+.recipeRowD .recipeDietsD {
+    height: 110px;
+    width: 50%;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.recipeRowD .recipeHsD {
+    height: 110px;
+    width: 50%;
+}
+
+.txtTitleDietsD {
+    color: var(--txtTitleDiets);
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.recipeDietsD .txtDietsD {
+    display: inline;
+    color: var(--txtDiets);
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+.txtTitleHs {    
+    font-size: 21px;
+    font-weight: 390px;
+}
+
+/* contenedor boton */
+.recipeFooterD {   
+    display: flex; 
+    margin: 0 3rem;
+    margin-right: 60px;
+    margin-left: 60px;
+    cursor: pointer;
+}
+
+.recipeSummaryD{
+    margin-top: 5px;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.recipeSummaryD p {
+    font-family: var(--headlinesFont);
+    font-size: 22px;
+}
+
+.recipeHealthD{
+    margin-left: 25px;
+    margin-right: 25px;
+
+}
+
+.recipeStepD{
+    display: flex;
+    flex-direction: column;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 25px;
+}
+
+.recipeStepD .txtTitleDietsD {
+    color: var(--txtTitleDiets);
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.recipeStepD .txtDietsD {
+    font-family: var(--headlinesFont);
+    font-size: 21px;
+    text-align: left;
+    margin-left: 25px;
+    margin-right: 25px;
+    font-weight: 390px;
+    text-transform: capitalize;
+}
+
+/* boton */
+.recipeFooterD p {
+    font-family: var(--headlinesFont);
+    background: var(--buttonBack);
+    padding: 0.3em 1em;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    font-size: 26px;
+    transition: transform 250ms ease, box-shadow 250ms ease;
+}
+
+.recipeFooterD p:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 34px 0 var(--buttonShadow);
+}
+
+/* Le quito la linea de abajo */
+.notLineD {
+    text-decoration: none;
+}

@@ -1,0 +1,59 @@
+:root {
+    --globalCheckSize: 1.2;
+    --globalScale: scale(var(--globalCheckSize));
+    --gBtnShadow: rgba(255, 113, 78, 0.3);
+    
+
+    /* fuentes */
+    --headlinesFont: 'Josefin Sans', sans-serif;
+    --bodyFont: 'Work Sans', sans-serif;
+    --gFontOne: 'Josefin Sans', sans-serif;
+    --gFontTwo: 'Work Sans', sans-serif;
+
+    --gBtnFont: 'Josefin Sans', sans-serif;
+    --gFilterFont: 'Work Sans', sans-serif;
+
+    /* sort, filter, new (header) */
+    --gBtn: rgba(255, 113, 78, 1);
+    --gBtnOver: rgba(255, 113, 78, 0.81);
+    --gBtnShadow: rgba(255, 113, 78, 0.3);
+
+
+    --gBtnLandingAndNotFound: rgba(255, 113, 78, 0.90);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+p, h1, h2, h3, h4 {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+input[type=checkbox] {
+    -ms-transform: var(--globalScale); /* IE */
+    -moz-transform: var(--globalScale); /* FF */
+    -webkit-transform: var(--globalScale); /* Safari and Chrome */
+    -o-transform: var(--globalScale); /* Opera */
+    transform: var(--globalScale);
+}
+
+/* .col{
+    display: flex;
+    flex-direction: column;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+} */
+

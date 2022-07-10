@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400,600,700|Work+Sans:100,200,300,400,500,600');
+:root {
+    --headlinesFont: 'Josefin Sans', sans-serif;
+    --bodyFont: 'Work Sans', sans-serif;
+    --white: #fff;
+    --txtTitleDiets: rgba(255, 113, 78, 1);
+    --txtDiets: rgba(50, 50, 50, 1);
+    --buttonCreate: rgba(255, 113, 78, 1);
+    --buttonShadow: rgba(255, 113, 78, 0.3);
+    --buttonDisabled: #cccccc;
+    --buttonShadowDisabled: #cccccc62;
+    --buttonStepHover: rgba(255, 113, 78, 0.3);
+}
+
+.createContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.createRecipe {
+    text-align: left;
+    align-self: center;
+    width: 600px;
+    height: fit-content;
+    background: var(--white);
+    box-shadow: 0px 0px 30px 0 rgb(0 0 0 / 38%);
+    overflow: hidden;
+    word-wrap: break-word; /* crea salto de lineas si el txt es largo */
+    margin: 30px 2% 30px 2%; /* separaciones */
+    transition: all 0.2s;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-radius: 10px;   
+}
+
+.createRecipe:hover {
+    transform: scaleY(1.01) scaleX(1.01);   
+}
+
+.createRecipe label {
+    font-family: var(--headlinesFont);
+    font-size: 18px;
+    color: gray;
+}
+
+.col{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.col input{
+    /* va a tener errores abajo */
+    display: flex;
+    flex-direction: column;
+
+    padding: 15px;
+    margin: 10px 0px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+.btnSubmit{
+    font-family: var(--headlinesFont);
+    background: var(--buttonCreate);
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 26px;
+    cursor: pointer;
+    letter-spacing: 0.2px;
+    transition: transform 250ms ease, box-shadow 250ms ease;
+}
+
+.btnSubmit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 34px 0 var(--buttonShadow);
+}
+
+.btnSubmit:disabled{
+    background-color: var(--buttonDisabled);
+    border: 1px solid #999999;
+}
+
+.btnSubmit:disabled:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 34px 0 var(--buttonShadowDisabled);
+}
+
+.createTitleDiet{
+    color: var(--txtTitleDiets);
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.rowPrueba{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.rowDiet{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.rowDiet input {
+    font-family: var(--headlinesFont);
+    font-size: 18px;
+    color: gray;
+    margin-left: 10px;
+    text-transform: capitalize;
+}
+
+.rowDiet p {
+    font-family: var(--headlinesFont);
+    font-size: 18px;
+    color: gray;
+    margin-left: 10px;
+    text-transform: capitalize;
+    padding-top: 4px;
+}
+
+.createTitle {
+    color: var(--txtDiets);
+    text-align: center;
+    font-family: var(--headlinesFont);
+    font-size: 18px;
+    margin-left: 10px;
+    text-transform: capitalize;
+}
+
+.offLabel{
+    margin-top: 38px;
+}
+
+.stepHeader {
+    display: flex;
+    flex-direction: row;
+    height: calc(30px);
+    width: calc(100%-1px);
+    border: 1px solid gray;
+    background-color: rgba(128, 128, 128, 0.048);
+}
+
+.rowStepHeader{
+    display: flex;
+    flex-direction: row;
+    width: 55%;
+    justify-content: right; /* horizontal */
+    align-items: center; /* vertical */
+}
+
+.rowStepHeaderBtn{
+    display: flex;
+    flex-direction: row;
+    width: 45%;
+    justify-content: right; /* horizontal */
+    align-items: center; /* vertical */
+}
+
+
+.textareaHeader {
+    display: flex;
+    flex-direction: row;
+    height: 30px;
+    width: calc(100%-1px);
+    border: 1px solid gray;
+    border-bottom: none;
+    background-color: rgba(128, 128, 128, 0.048);
+}
+
+.rowStep{
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    justify-content: right; /* horizontal */
+    align-items: center; /* vertical */
+    padding-left: 20px;
+}
+
+.rowStepBtn{
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    justify-content: right;
+}
+
+.numStep{    
+    color: gray;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.textarea {
+    height: 49px;
+    resize: none; /* le saco el resize */
+    overflow: hidden; /* le saco el scrollbar */
+    padding-top: 15px; /* le agrego un poco de relleno sino se me corta */
+    padding-left: 15px;
+    padding-right: 15px;
+    /* margin: 10px 0px;  */
+    border-radius: 0px 0px 5px 5px;
+    border: 1px solid gray;
+}
+
+.btnAddStep{
+    width: 116px;
+}
+
+.btnStep{
+    height: 100%;
+    font-family: var(--headlinesFont);
+    background: var(--buttonCreate);
+    font-size: 18px;
+    border: 1px solid rgba(128, 128, 128, 0.51);
+    border-top: none;
+    border-bottom: none;
+    color: white;
+    cursor: pointer;
+    letter-spacing: 0.2px;
+    transition: transform 250ms ease, box-shadow 250ms ease;
+}
+
+.btnStep:hover {
+    transform: translateX(-1px);
+    background-color: var(--buttonStepHover);
+    box-shadow: 0 10px 34px 0 var(--buttonShadow);
+}
+
+.summaryInput{
+    margin: 10px 0px;
+    resize: none; /* le saco el resize */
+    overflow: hidden; /* le saco el scrollbar */
+    padding-top: 15px; /* le agrego un poco de relleno sino se me corta */
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+.divErr{
+    /* height: 15px; */
+    height: 1px;    
+}
+
+.error{
+    /* text-align: center; */
+    text-align: right;
+    font-size: 15px;
+    color: red;
+   /*  margin-right: 15px */
+}
+
+.divErrDiet{
+    height: 1px;  
+    margin-bottom: 20px;  
+}
+
+.errorDiet{
+    text-align: left;
+    font-size: 15px;
+    color: red;
+}
+
+@media only screen and (max-width: 800px) {
+
+    .createRecipe {
+        width: 70%;
+    }
+    .createTitle{
+        font-size: 15px;
+    }
+}

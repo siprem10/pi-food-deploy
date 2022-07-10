@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400,600,700|Work+Sans:100,200,300,400,500,600');
+:root {
+    --headlinesFont: 'Josefin Sans', sans-serif;
+    --bodyFont: 'Work Sans', sans-serif;
+    --white: #fff;
+    --txtTitleDiets: rgba(255, 113, 78, 1);
+    --txtDiets: rgba(50, 50, 50, 1);
+    --buttonDetail: rgba(255, 113, 78, 1);
+    --buttonShadow: rgba(255, 113, 78, 0.3);
+}
+
+.recipeCard {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 460px;
+    background: var(--white);
+    box-shadow: 0px 0px 30px 0 rgb(0 0 0 / 38%);
+    overflow: hidden;
+    word-wrap: break-word; /* crea salto de lineas si el txt es largo */
+    margin: 10px 2% 10px 2%; /* separaciones */
+    transition: all 0.2s;
+    padding-bottom: 20px;
+    border-radius: 10px;  
+    /* Las separo un poco cosa de que me queden 3 por fila */
+    margin-left: 3%;
+    margin-right: 3%;
+
+    /* Separacion entre tarjetas */
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.recipeCard:hover { 
+    transform: scale(1.02);
+}
+
+.recipeHeader {
+    position: relative;
+    height: 40%;
+    /* height: 200px; */
+    width: 100%;
+    box-shadow: 0 0 88px 0 rgba(0, 0, 0, 0.1607843137254902);
+    /* box-shadow: 0px 0px 8px rgba(0,0,0,.6); */ /* esta bueno */
+}
+    
+    .recipeButtons button{
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        right: 0;
+        color: white;
+        font-family: var(--headlinesFont);
+        font-weight: 600px;
+        font-size: 24px;
+        font-style: bold;
+        border: none;
+        box-shadow: 0px 0px 8px rgba(0,0,0,.6);
+        transition: all 0.3s ease 0s;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+
+    .recipeButtons .recipeBtnDel:hover {
+        box-shadow: 0px 0px 8px rgba(0,0,0,.6);
+        color: #fff;
+    }
+
+        .recipeButtons .recipeBtnDel{
+            height: 30px;
+            width: 30px;
+            background-color: rgba(255, 0, 0, 0.619);
+            margin-top: 4px;
+            margin-right: 4px;
+        }
+
+        .recipeButtons img{
+            height: 20px;
+            width: 20px;
+        }
+
+        .recipeButtons .recipeBtnDel:hover {
+            background-color: rgba(255, 123, 0, 0.619);
+        }
+
+        .recipeButtons .recipeBtnEdt{
+            height: 30px;
+            width: 30px;
+            background-color: rgba(255, 0, 0, 0.619);
+            margin-top: 4px;             
+            margin-right: 40px;         
+        }
+
+        .recipeButtons .recipeBtnEdt:hover {
+            position: absolute;
+            background-color: rgba(255, 123, 0, 0.619);
+        }
+
+    .recipeHsFlex {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: right;
+        align-items: flex-end;
+    }
+
+        .recipeHsDiv {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 123, 0, 0.85);
+            box-shadow: 0px 0px 8px rgba(0,0,0,.6);
+            transition: all 0.3s ease 0s;
+            border-radius: 20px;
+            padding: 4px;
+            margin-bottom: 8px;
+            margin-right: 8px;
+        }
+
+        .recipeHsDiv:hover {
+            background-color: rgba(108, 175, 247, 0.86);
+            box-shadow: 0px 0px 8px rgba(0,0,0,.6);
+        }
+
+        .recipeHsDiv img {
+            height: 20px;
+            width: 20px;
+            margin-right: 2px;
+        }
+
+        .recipeHsDiv p {
+            font-size: 18px;
+            font-family: var(--bodyFont);
+            color: #fff;
+            text-align: center;
+        }
+
+.recipeCard .recipeImg {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.recipeContainerTitle {
+    height: 100px;
+    width: 340px;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 20px;
+    /* background-color: blue; */
+}
+
+.recipeContainerTitle .normalH3 {
+    height: 100%;
+    width: 100%;
+    text-align: left;
+    font-family: var(--headlinesFont);
+    font-weight: 600;
+    font-size: 28px;
+}
+
+.recipeContainerTitle .fixTitle {
+    font-size: 23px;
+}
+
+.recipeDiets {
+    height: 110px;
+    width: 340px;
+    margin-right: 25px;
+    margin-left: 25px;
+    /* background-color: greenyellow; */
+}
+
+.recipeDiets .txtTitleDiets {
+    color: var(--txtTitleDiets);
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.recipeDiets .txtDiets {
+    display: inline;
+    color: var(--txtDiets);
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+.recipeDiets .fixDiet {
+    font-size: 16px;
+}
+
+/* contenedor boton */
+.recipeFooter {   
+    display: flex; 
+    margin: 0 3rem;
+    margin-right: 60px;
+    margin-left: 60px;
+    cursor: pointer;
+}
+
+/* boton */
+.recipeFooter p {
+    font-family: var(--headlinesFont);
+    background: var(--buttonDetail);
+    padding: 0.3em 1em;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    font-size: 26px;
+    transition: transform 250ms ease, box-shadow 250ms ease;
+}
+
+.recipeFooter p:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 34px 0 var(--buttonShadow);
+}
+
+/* Le quito la linea de abajo */
+.notLine {
+    text-decoration: none;
+}

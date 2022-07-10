@@ -1,0 +1,100 @@
+.sortContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+/* container */
+.sortDiv{
+    height: 31px;
+    width: 214px;
+}
+
+    /* lo que ocupa el 1ero */
+    .sortHead{
+        display: flex;
+        height: 9px;
+        padding: 10px;
+        background-color: #fff;
+        font-size: 17px;
+        font-weight: 400;
+        align-items: center;
+        cursor: pointer;
+        box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        border: var(--border);
+    }
+
+    .sortHeadTxt{
+        font-family: var(--gFilterFont);
+        display: flex;
+        width: 95%;
+        justify-content: left;
+    }
+
+    /* icono de head select */
+    .sortHeadTxt img{
+        height: 20px;
+        width: 20px;
+    }
+
+        /* icono de menu */
+        .sortHeadIc img{
+            height: 12px;
+            width: 10px;
+            transition: transform 250ms ease, box-shadow 250ms ease;
+        }
+
+        /* icono gira cuando clickeo el 1ero */
+        .sortDiv.active .sortHeadIc img{
+            transform: rotate(-180deg);
+        }
+
+    .sortDiv .options{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding: 9px;
+        background-color: #fff;
+        display: none;
+        border: var(--border);
+        border-top: none;
+    }
+
+    .sortDiv.active .options{
+        display: block;
+    }
+
+    .option{
+        display: flex;
+        height: fit-content;
+        cursor: pointer;
+        align-items: center;
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
+
+    .option.active{
+        background-color: gainsboro;
+        border-radius: 5px;
+    }
+
+    .option:hover{
+        background-color: gainsboro;
+        border-radius: 5px;
+    }
+
+    .option:focus{
+        background-color: #8cff08;
+    }
+    
+    .optionTxt{
+        font-family: var(--gFilterFont);
+        display: inline-block;
+        font-size: 17px;
+        color: #333;
+    }    
+
+    .sortImg{
+        height: 25px;
+        width: 25px;
+        margin-right: 10px;
+    }

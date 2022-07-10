@@ -1,0 +1,94 @@
+:root {
+    --headlinesFont: 'Josefin Sans', sans-serif;
+    --bodyFont: 'Work Sans', sans-serif;
+    --btn: rgba(255, 113, 78, 1);
+    --btnHover: rgba(255, 113, 78, 0.8);
+    --fontSizeInput: 18px;
+    --sizeSearchH: 40px;
+    --borderSearch: 1px solid grey;
+    --borderFocus: 1px solid rgba(0, 188, 212, 1);
+}
+
+.seachBarContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+    /* mi input */
+    .searchInput{
+        height: var(--sizeSearchH);
+        width: 300px;
+        font-family: var(--bodyFont);
+        font-size: var(--fontSizeInput);
+        border: var(--borderSearch);
+        border-radius: 50px 0px 0px 50px;
+        color: black;
+        outline: none;
+        padding: 0 10px; /* Relleno espacio de los bordes del input */
+        padding-bottom: 2px;
+    }
+
+        .searchInput:focus{
+            border: var(--borderFocus);
+        }
+
+        /* mi input lo que esta dentro de placeholder */
+        .searchInput::placeholder{
+            font-size: var(--fontSizeInput);
+        }
+
+    /* boton submit */
+    .searchBtn{
+        height: calc(var(--sizeSearchH+2px));
+        width: 40px;
+        background-color: var(--btn);
+        border: var(--borderSearch);
+        border-radius: 0px 50px 50px 0px;
+        border-left: none;
+        color: black;
+        outline: none;
+        padding: 0 10px; /* Relleno espacio de los bordes del input */
+        cursor: pointer;
+    }
+
+        .searchBtn:hover{
+            background-color: var(--btnHover);
+        }
+
+        .icSearch {    
+            height: 20px;
+            width: 20px;
+        }
+
+        .lupita{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lupita::before{
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border: 2px solid white;
+            border-radius: 50%;
+            transform: translate(-4px, -4px);
+        }
+
+        .lupita::after{
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 10px;
+            background: white;
+            transform: translate(4px, 4px) rotate(315deg);
+        }
+
+@media only screen and (max-width: 650px) {
+    .searchInput{
+        width: 232px;
+    }
+}
