@@ -38,7 +38,7 @@ export default function Home() {
     // Cambiar de pág
     function setPaginate(newPageNum){
         // seteo solo si no es la misma
-        if(newPageNum !== currentPage){
+        if(newPageNum !== -1 && newPageNum !== currentPage){
             setCurrentPage(newPageNum);
         }
     }

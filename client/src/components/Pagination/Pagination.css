@@ -1,5 +1,6 @@
 :root {
     
+    --itemDisabled: gray;
     --itemSelect: rgba(255, 113, 78, 1);
     --itemSelectHover: rgb(255, 78, 78);   
     --itemNotSelect: white;
@@ -68,4 +69,10 @@
     .pagination p:last-child {
         border-top-right-radius: 5px;
         border-bottom-right-radius: 5px;
+    }
+
+    .pagination .disabled {
+        color: white;
+        background-color: var(--itemDisabled);
+        transition: all 0.3s ;
     }

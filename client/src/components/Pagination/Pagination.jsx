@@ -3,20 +3,6 @@ import "./Pagination.css";
 
 export default function Pagination({ cardsPerPage, totalCards, setPaginate, currentPage }) {
 
-
-    //pageNumbers = [1, 2, 3, 4, 5, 6 , 7 , 8 , 9 ,10, 11]
-    //pageNumbers[0]; // primer elem
-    //pageNumbers[pageNumbers.length - 1]; // ultimo elem
-        
-    /* let prueba = [1, 2, 3, 4, 5, 6 , 7 , 8 , 9 ,10, 11];
-    for(let i=0; i<prueba.length; i++){
-
-        if(i > 8){
-            break;
-        }
-        console.log(prueba[i]);
-    } */
-
     const pageNumbers = [];
     for(let i = 1; i <= Math.ceil(totalCards / cardsPerPage); i++) {
         pageNumbers.push(i);
@@ -57,35 +43,62 @@ export default function Pagination({ cardsPerPage, totalCards, setPaginate, curr
     function isItemLast(){
         return (currentPage === pageNumbers[pageNumbers.length-1]);
     }
+    function generateId(id){
+
+        if(!id || isNaN(id)){
+            return -1;
+        }
+        return id;
+    }
+
+    // desde donde estoy parado muestro 4 hacia adelante
+    function limitPag(item, items){
+        let window = 5, more = "...", //configs
+            nothin = [], //util
+            limit = items.length - window,
+            i = Math.max(0, Math.min(limit, items.indexOf(item) - (window>>1)));
+
+
+            if(i>0 && i<limit){
+                //console.log("a");
+                return nothin.concat(
+                    i > 0? more: nothin,
+                    items.slice(i+1, i + window-1),
+                    i < limit? more: nothin
+                );
+            }
+
+            if(i>0){
+                //console.log("b");
+                return nothin.concat(
+                    i > 0? more: nothin,
+                    i > 0? items.slice(i+1, i + window) : items.slice(i, i + window),
+                );
+            }
+
+            if(i < limit){
+                //console.log("c");
+                return nothin.concat(  
+                    i < limit? items.slice(i, i + window-1) : items.slice(i, i + window),
+                    i < limit? more: nothin
+                );
+            }
+    }
   
     return (
         <div>
-            <div className="pagination">
-                {!isItemFirst() && pageNumbers.length > 0 && <p className="active" onClick={changeBack}>{"<-"}</p>}
-                {pageNumbers.map((num) => (
-                    <p className={isItemSelect(num)? "active" : ""} key={num} id={num} onClick={(e) => changePaginate(e.target.id)}>
-                        {num}
-                    </p>                
-                ))}
-                {!isItemLast() && pageNumbers.length > 0 && <p className="active" onClick={changeNext}>{"->"}</p>}
-            </div>
+            {pageNumbers.length > 0 &&
+                <div className="pagination">
+                    {<p className={!isItemFirst() ? "active" : "disabled"} onClick={changeBack}>{"<-"}</p>}
+                    {limitPag((currentPage), pageNumbers).map((num, i) => (
+                        <p className={isItemSelect(num)? "active" : ""} key={i} id={generateId(num)} onClick={(e) => changePaginate(e.target.id)}>
+                            {num}
+                        </p>                
+                    ))}
+                    {<p className={!isItemLast() ? "active" : "disabled"} onClick={changeNext}>{"->"}</p>}
+                </div>
+            }
         </div>
     );
 };
-
-/*return (      
-    // aca veo si uso li en vez de a
-    // aca los elementos se deberian mapear hasta maximo 9 por pagina  
-    <div className="pagination">
-        { <a href="#">&laquo;</a>
-        <a href="#">1</a>
-        <a class="active" href="#">2</a>
-        <a href="#">3</a>
-        <a href="#">4</a>
-        <a href="#">5</a>
-        <a href="#">6</a>
-        <a href="#">&raquo;</a> }
-    </div>
-);  
-}*/
 
