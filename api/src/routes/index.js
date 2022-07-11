@@ -2,7 +2,8 @@ const { Router } = require('express'); // express
 //const express = require("express"); // express
 
 // Importo las rutas
-const recipesRouter = require('./recipe.js');
+/* const recipesRouter = require('./recipe.js'); */
+const recipesRouter = require('./recipeOnlyDb.js');
 const dietsRouter = require('./diet.js');
 
 const router = Router();

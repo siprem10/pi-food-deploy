@@ -23,11 +23,11 @@ module.exports = (sequelize) => {
       defaultValue: DataTypes.UUIDV4 // si el usuario crea un personaje se genera un id auto
     },
     name: {
-      type: DataTypes.STRING(60),
+      type: DataTypes.STRING(80),
       allowNull: false, // require *
       validate: {        
         isValidRange(value){
-          if( value.length > 60 ){
+          if( value.length > 80 ){
             throw new Error("Name very long!");
           }
         }
@@ -59,7 +59,6 @@ module.exports = (sequelize) => {
     // Paso a paso (instrucciones)
     steps: {
       type: DataTypes.ARRAY(DataTypes.STRING(65535)), // es un arreglo de strings
-      allowNull: false,
     },
     // Guardar el path de una img
     imgUri: {

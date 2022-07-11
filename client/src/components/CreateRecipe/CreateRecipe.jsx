@@ -59,7 +59,7 @@ export default function CreateRecipe({id, toEdit}) {
         }
 
         if(updateSteps){
-            console.log(stepsRef.current);
+            //console.log(stepsRef.current);
             updateSizeSteps();
             setUpdateSteps(false);
         } 
@@ -275,7 +275,7 @@ export default function CreateRecipe({id, toEdit}) {
 
     function handleStepBtn(e) {
        
-        const steps = inputState.steps.map(e => e);
+        const steps = inputState.steps ? inputState.steps.map(e => e) : [];
         const id = Number(e.target.id);
         const posNext = id + 1;  
 

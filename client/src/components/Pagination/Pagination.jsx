@@ -87,10 +87,10 @@ export default function Pagination({ cardsPerPage, totalCards, setPaginate, curr
   
     return (
         <div>
-            {pageNumbers.length > 0 &&
+            {pageNumbers.length > 1 &&
                 <div className="pagination">
                     {<p className={!isItemFirst() ? "active" : "disabled"} onClick={changeBack}>{"<-"}</p>}
-                    {limitPag((currentPage), pageNumbers).map((num, i) => (
+                    {limitPag((currentPage), pageNumbers)?.map((num, i) => (
                         <p className={isItemSelect(num)? "active" : ""} key={i} id={generateId(num)} onClick={(e) => changePaginate(e.target.id)}>
                             {num}
                         </p>                

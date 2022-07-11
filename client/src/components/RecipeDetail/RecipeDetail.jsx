@@ -18,12 +18,18 @@ export default function RecipeDetail({recipe, loading}){
     let dietsFormat;
 
     // db
-    if(isNaN(Number(recipe.id))){        
+    /* if(isNaN(Number(recipe.id))){        
         dietsFormat = recipe.diets?.map((e, i) => formatDiets(e.name, i, recipe.diets.length));
     } else { // api
         dietsFormat = recipe.diets?.map((e, i) => formatDiets(e, i, recipe.diets.length));
-    }
+    } */
+
+    dietsFormat = recipe.diets?.map((e, i) => formatDiets(e.name, i, recipe.diets.length));
     
+    if(!dietsFormat.length){
+        dietsFormat = ["Not specified"];
+    }
+
     function formatDiets(diet, i, long){
         if(i < long-1){
             return `${diet} - `
@@ -39,15 +45,13 @@ export default function RecipeDetail({recipe, loading}){
             <div className="recipeContainerTitleD">
                 <h3>{recipe.name}</h3>
             </div>
-            <div className="recipeRowD">
-                {recipe.diets && recipe.diets.length &&                
-                    <div className="recipeDietsD">                           
-                        <p className="txtTitleDietsD">{recipe.diets.length > 1 ? "Types of diet" : "Type of diet"}</p>
-                            {dietsFormat.map((diet, i) =>
-                                <p className="txtDietsD" key={i}>{diet}</p>
-                            )} 
-                    </div> 
-                }
+            <div className="recipeRowD">              
+                <div className="recipeDietsD">                           
+                    <p className="txtTitleDietsD">{dietsFormat.length > 1 ? "Types of diet" : "Type of diet"}</p>
+                        {dietsFormat.map((diet, i) =>
+                            <p className="txtDietsD" key={i}>{diet}</p>
+                        )} 
+                </div> 
                 <div className="recipeHsD">
                     <p className="txtTitleDietsD">{"HealthScore"}</p>
                     <p className="txtTitleHs">{`${recipe.healthScore}%`}</p>  

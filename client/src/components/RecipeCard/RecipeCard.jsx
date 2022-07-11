@@ -17,10 +17,16 @@ export default function RecipeCard({props}){
     let dietsFormat;
 
     // db
-    if(isDB()){        
+    /* if(isDB()){        
         dietsFormat = props.diets?.map((e, i) => formatDiets(e.name, i, props.diets.length));
     } else { // api
         dietsFormat = props.diets?.map((e, i) => formatDiets(e, i, props.diets.length));
+    } */
+
+    dietsFormat = props.diets?.map((e, i) => formatDiets(e.name, i, props.diets.length));
+
+    if(!dietsFormat.length){
+        dietsFormat = ["Not specified"];
     }
 
     function isDB(){
@@ -68,15 +74,13 @@ export default function RecipeCard({props}){
             </div>
             <div className="recipeContainerTitle">
                 <h3 className={props.name.length < 75 ? "normalH3" : "normalH3 fixTitle"}>{props.name}</h3>
-            </div>
-            {dietsFormat && dietsFormat.length > 0 &&                
-                <div className="recipeDiets">                           
-                    <p className="txtTitleDiets">{dietsFormat.length > 1 ? "Types of diet" : "Type of diet"}</p>
-                        {dietsFormat.map((diet, i) =>
-                            <p className={dietsFormat.length < 7 ? "txtDiets" : "txtDiets fixDiet"} key={props.id + i}>{diet}</p>
-                        )} 
-                </div> 
-            }              
+            </div>              
+            <div className="recipeDiets">                           
+                <p className="txtTitleDiets">{dietsFormat.length > 1 ? "Types of diet" : "Type of diet"}</p>
+                    {dietsFormat.map((diet, i) =>
+                        <p className={dietsFormat.length < 7 ? "txtDiets" : "txtDiets fixDiet"} key={props.id + i}>{diet}</p>
+                    )} 
+            </div>        
             <Link className='notLine' to={`/home/${props.id}`}>
                 <footer className="recipeFooter">            
                     <p>Details</p>
