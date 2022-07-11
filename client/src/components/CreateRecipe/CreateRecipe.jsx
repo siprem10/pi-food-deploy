@@ -63,7 +63,8 @@ export default function CreateRecipe({id, toEdit}) {
             updateSizeSteps();
             setUpdateSteps(false);
         } 
-
+        
+        //eslint-disable-next-line
     }, [dispatch/* , inputState, inputError */, edit, toEdit, isPrefs, updateSteps]);
 
     function isEdit(){

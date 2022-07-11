@@ -70,7 +70,7 @@
 }
 
 .recipeRowD .recipeDietsD {
-    height: 110px;
+    height: fit-content;
     width: 50%;
     margin-left: 25px;
     margin-right: 25px;
