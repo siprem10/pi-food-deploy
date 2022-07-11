@@ -32,7 +32,7 @@ async function preChargeRecipes(){
             
             // creo en la db la nueva Receta
             const newRecipe = await Recipe.create({
-                id: api.id, // si comento el id lo podria autogenerar y hacer que todas sean editables          
+                /* id: api.id, */ // si comento el id lo podria autogenerar y hacer que todas sean editables          
                 name: api.name, 
                 summary: api.summary, 
                 healthScore: api.healthScore, 
