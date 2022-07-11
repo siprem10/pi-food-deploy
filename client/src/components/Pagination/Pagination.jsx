@@ -58,7 +58,7 @@ export default function Pagination({ cardsPerPage, totalCards, setPaginate, curr
     // desde donde estoy parado muestro 4 hacia adelante
     function limitPag(item, items){
 
-        if(items.length < 5){
+        if(items.length <= 5){
             return pageNumbers;
         }
 
