@@ -136,7 +136,7 @@ export default function CreateRecipe({id, toEdit}) {
 
             if(!input.summary){ 
                 errors.summary = 'Summary is required'; 
-            } else if( input.summary.replaceAll(" ", "").length === 0){
+            } else if(input.summary.replaceAll(" ", "").length === 0){
                 errors.summary = 'Summary is required'; 
             }
             else if(input.summary.length < minSummary){
