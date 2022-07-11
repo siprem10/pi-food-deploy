@@ -40,7 +40,7 @@
 
     /* boton submit */
     .searchBtn{
-        height: calc(var(--sizeSearchH+2px));
+        height: 44px;
         width: 40px;
         background-color: var(--btn);
         border: var(--borderSearch);
