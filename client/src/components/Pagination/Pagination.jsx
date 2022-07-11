@@ -43,11 +43,15 @@ export default function Pagination({ cardsPerPage, totalCards, setPaginate, curr
     function isItemLast(){
         return (currentPage === pageNumbers[pageNumbers.length-1]);
     }
-    function generateId(id){
 
-        if(!id || isNaN(id)){
-            return -1;
-        }
+    /* function generateId(id){
+        if(!id || isNaN(id)) return -1;
+        return id;
+    } */
+
+    function generateId(id, iteration){
+        if(iteration === 0) return 1;
+        if(iteration > 0 && isNaN(id)) return pageNumbers[pageNumbers.length-1];
         return id;
     }
 
@@ -91,7 +95,7 @@ export default function Pagination({ cardsPerPage, totalCards, setPaginate, curr
                 <div className="pagination">
                     {<p className={!isItemFirst() ? "active" : "disabled"} onClick={changeBack}>{"<-"}</p>}
                     {limitPag((currentPage), pageNumbers)?.map((num, i) => (
-                        <p className={isItemSelect(num)? "active" : ""} key={i} id={generateId(num)} onClick={(e) => changePaginate(e.target.id)}>
+                        <p className={isItemSelect(num)? "active" : ""} key={i} id={generateId(num, i)} onClick={(e) => changePaginate(e.target.id)}>
                             {num}
                         </p>                
                     ))}
