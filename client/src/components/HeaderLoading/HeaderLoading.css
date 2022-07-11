@@ -41,7 +41,7 @@
             width: 100px;
         } 
         
-        .headerAbout:hover{
+        .headerAboutFake:hover{
             transform: translateY(-4px);
         }  
 
