@@ -127,16 +127,16 @@ export default function CreateRecipe({id, toEdit}) {
       
             if(!input.name){
               errors.name = 'Name is required'; 
-            } else if(input.name.length > maxName){
-                errors.name = `Name is too long (${input.name.length}/${maxName})`; 
+            } else if(input.name.replaceAll(" ", "").length > maxName){
+                errors.name = `Name is too long (${input.name.replaceAll(" ", "").length}/${maxName})`; 
             }
 
             if(!input.summary){ 
                 errors.summary = 'Summary is required'; 
-            } else if(input.summary.length < minSummary){
-                errors.summary = `Summary is too short (${input.summary.length}/${minSummary})`; 
-            } else if(input.summary.length > maxSummary){
-                errors.summary = `Summary is too long (${input.summary.length}/${maxSummary})`; 
+            } else if(input.summary.replaceAll(" ", "").length < minSummary){
+                errors.summary = `Summary is too short (${input.summary.replaceAll(" ", "").length}/${minSummary})`; 
+            } else if(input.summary.replaceAll(" ", "").length > maxSummary){
+                errors.summary = `Summary is too long (${input.summary.replaceAll(" ", "").length}/${maxSummary})`; 
             }
 
             if(!input.healthScore){
