@@ -7,7 +7,7 @@ const routes = require('./routes/index.js');
 require('./db.js');
 
 const server = express();
-const port = 3000; // port del front, para peticion front al back /?
+/* const port = 3000; // port del front, para peticion front al back /? */
 
 server.name = 'API';
 
