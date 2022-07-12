@@ -62,7 +62,7 @@
 
         .headerDev{
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             justify-content: center;
             align-items: center;
             height: fit-content;
@@ -70,10 +70,15 @@
             transition: transform 250ms ease, box-shadow 250ms ease;
             border: 1px solid gray;
             border-radius: 5px;
-            background-color: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 1);
             padding: 2px;
+            padding-top: 4px;
+            padding-bottom: 4px;
             cursor: pointer;
+        }
+        
+        .headerDev:hover{
+            transform: translateY(4px);
         }
 
             .headerDev h2{
@@ -83,8 +88,11 @@
             }
 
             .headerDev img{
-                height: 15px;
-                width: 15px;
+                height: 18px;
+                width: 18px;
+                margin-left: 2px;
+                margin-right: 2px;
+                text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
             }
 
     .headerWorkDiv{
