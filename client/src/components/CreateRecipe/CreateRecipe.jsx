@@ -352,6 +352,8 @@ export default function CreateRecipe({id, toEdit}) {
       <div className="createRecipe">
          <form onSubmit={e=> e.preventDefault()}>
 
+            <p onClick={() => redirectTo("/home")} className="createBack">{"<--"}</p>
+
             <div className="createTitle">
                 <h1>{menu.title}</h1>
             </div>

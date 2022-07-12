@@ -92,6 +92,19 @@
     box-shadow: 0 10px 34px 0 var(--buttonShadowDisabled);
 }
 
+.createBack{
+    font-size: 25px;
+    font-weight: 500;
+    transition: transform 150ms ease;
+    cursor: pointer;
+}
+
+.createBack:hover{
+    color: var(--txtTitleDiets);
+    font-size: 25px;
+    transform: translateX(-2px);
+}
+
 .createTitleDiet{
     color: var(--txtTitleDiets);
     font-size: 20px;
