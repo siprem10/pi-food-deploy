@@ -250,7 +250,7 @@
 
 .divErr{
     /* height: 15px; */
-    height: 1px;    
+    height: 10px;    
 }
 
 .error{
@@ -262,7 +262,7 @@
 }
 
 .divErrDiet{
-    height: 1px;  
+    height: 5px;  
     margin-bottom: 20px;  
 }
 
