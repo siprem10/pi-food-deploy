@@ -229,3 +229,22 @@
 .notLine {
     text-decoration: none;
 }
+
+@media only screen and (max-width: 650px) {
+    .recipeCard {
+        height: 460px;
+        width: 400px;
+    }
+
+    .recipeContainerTitle {
+        height: 100px;
+        width: 90%;
+        margin-top: 20px;
+    }
+
+    .recipeDiets {
+        height: 100px;
+        width: 90%;
+        margin-bottom: 10px;
+    }
+}
