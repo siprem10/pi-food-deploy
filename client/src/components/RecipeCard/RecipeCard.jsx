@@ -73,7 +73,7 @@ export default function RecipeCard({props}){
                 <img className="recipeImg" src={props.imgUri} onError={addDefaultSrc} alt="Img not found"></img>
             </div>
             <div className="recipeContainerTitle">
-                <h3 className={props.name.length < 75 ? "normalH3" : "normalH3 fixTitle"}>{props.name}</h3>
+                <h3 className={props.name.length < 50 ? "normalH3" : "normalH3 fixTitle"}>{props.name}</h3>
             </div>              
             <div className="recipeDiets">                           
                 <p className="txtTitleDiets">{dietsFormat.length > 1 ? "Types of diet" : "Type of diet"}</p>

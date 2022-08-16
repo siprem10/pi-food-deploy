@@ -119,7 +119,7 @@ export default function CreateRecipe({id, toEdit}) {
 
         //console.log(input); // es el objeto el input
         let errors = {};
-        const maxName = 44;
+        const maxName = 56;
         const minSummary = 10;
         const maxSummary = 1500;
         const maxHs = 100;
