@@ -285,6 +285,24 @@
     color: red;
 }
 
+    .divImgRecipe{
+        height: 80px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 35px;
+    }
+
+    .divImgRecipe img{
+        height: 100%;
+        width: 150px;
+        border: 2px solid #f1f2f3;
+        border-radius: 15px;
+        margin: 15px;
+        padding: 15px;
+    }
+
 @media only screen and (max-width: 800px) {
 
     .createRecipe {

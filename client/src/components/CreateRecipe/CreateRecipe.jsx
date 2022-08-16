@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { addRecipe, getAllDiets, updateRecipe } from '../../redux/actions/actions.js';
+import { addDefaultSrc, postImageToCloudinary } from '../methods.js';
 import "./CreateRecipe.css"
 
 /* deberia ser form */
@@ -162,13 +163,7 @@ export default function CreateRecipe({id, toEdit}) {
                         break;
                     }
                 }
-            }    
-
-            if(!input.imgUri){
-                errors.imgUri = 'Image is required'; 
-            } else if(input.summary.length > maxSummary){
-                errors.summary = `Summary is too long (${input.summary.length}/${maxSummary})`; 
-            }
+            } 
 
             if(!input.diets || !input.diets.length){
                 errors.diets = 'At least one diet is required'; 
@@ -216,6 +211,16 @@ export default function CreateRecipe({id, toEdit}) {
         updateState(name, value);
         updateStateErr(name, value);
     }
+
+    async function setImg(e) {
+        const result = await postImageToCloudinary(e);
+    
+        if (result) {          
+        updateState(e.target.name, result);
+        } else {
+          e.target.value = '';
+        }
+      }
 
     // guardo las dietas en el array
     function handleOnCheck(e){
@@ -407,15 +412,13 @@ export default function CreateRecipe({id, toEdit}) {
             <div className="col">
                 <input 
                     placeholder="Image"
-                    type="text"
+                    type="file"
                     name="imgUri"
-                    value={inputState.imgUri}
-                    onChange={(e)=> handleOnChange(e)}>                    
+                    onChange={(e)=> setImg(e)}>                    
                 </input>
-                {/* <img src={inputState.imgUri} onError={isValidImage}></img> */}
-                <div className="divErr">
-                    {inputError.imgUri && <p className="error">{inputError.imgUri}</p>}    
-                </div>        
+                <div className="divImgRecipe">
+                    <img src={inputState.imgUri} onError={addDefaultSrc} alt="img not found"></img>
+                </div>      
             </div> 
         
             {/* <label>Steps</label> */}
