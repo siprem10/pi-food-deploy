@@ -1,6 +1,5 @@
 import img_err_recipe from "../assets/img_err_recipe.png"
 import { useEffect } from "react";
-import axios from "axios";
 
 export function addDefaultSrc(e){
     e.target.src = img_err_recipe;

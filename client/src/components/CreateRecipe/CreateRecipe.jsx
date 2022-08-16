@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { addRecipe, getAllDiets, updateRecipe } from '../../redux/actions/actions.js';
 import { addDefaultSrc, postImageToCloudinary } from '../methods.js';
+import img_empty_recipe from "../assets/img_err_recipe.png"
 import "./CreateRecipe.css"
 
 /* deberia ser form */
@@ -417,7 +418,7 @@ export default function CreateRecipe({id, toEdit}) {
                     onChange={(e)=> setImg(e)}>                    
                 </input>
                 <div className="divImgRecipe">
-                    <img src={inputState.imgUri} onError={addDefaultSrc} alt="img not found"></img>
+                    <img src={inputState.imgUri || img_empty_recipe} onError={addDefaultSrc} alt="img not found"></img>
                 </div>      
             </div> 
         
