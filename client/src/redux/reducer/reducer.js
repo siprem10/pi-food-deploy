@@ -19,7 +19,7 @@ const initialState = {
     recipes: [],
     recipeDetail: {},
     diets: [],
-    appPrefs: {pageNum: 1, filter: "", search: "", sort: ""}
+    appPrefs: {pageNum: 1, filter: "", search: "", sort: "", scrollY: 0}
 };
 
 // reducer

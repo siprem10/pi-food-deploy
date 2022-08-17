@@ -26,10 +26,11 @@ export default function Home() {
         if(!recipesAll || !recipesAll.length){
             dispatch(getAllRecipes(setLoading, query));
         }
+        window.scrollTo(0, appPrefs.scrollY);
 
         // Equivale a ComponentDidUnmount()
         // return () => dispatch(resetRecipes());
-    }, [dispatch, recipesAll, query]);
+    }, [dispatch, recipesAll, query, appPrefs]);
 
     // Obtengo tarjetas actuales (pág)
     const indexOfLastCard = currentPage * cardsPerPage; // ultimo elm tarjeta (2 * 9 = 18 total tarjetas)

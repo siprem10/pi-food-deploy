@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
-import { deleteRecipe } from '../../redux/actions/actions';
+import { deleteRecipe, saveAppPrefs } from '../../redux/actions/actions';
 import ic_delete from "../../assets/ic_delete.png"
 import ic_edit from "../../assets/ic_edit.png"
 import ic_heart from "../../assets/ic_heart4.png"
@@ -48,6 +48,7 @@ export default function RecipeCard({props}){
 
     // editar un elemento
     function editItem(){
+        dispatch(saveAppPrefs({scrollY: window.scrollY}))
         history.push(`/edit/${props.id}`);
     }
 
