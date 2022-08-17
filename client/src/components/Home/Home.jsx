@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { useRef } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from 'react-router-dom';
 import { getAllRecipes, saveAppPrefs} from '../../redux/actions/actions.js';
@@ -10,6 +11,7 @@ import "./Home.css";
 export default function Home() {
 
     const dispatch = useDispatch();
+    const mount = useRef(false);
     const query = useLocation().search;
     /* console.log(query); */
 
@@ -26,7 +28,11 @@ export default function Home() {
         if(!recipesAll || !recipesAll.length){
             dispatch(getAllRecipes(setLoading, query));
         }
-        window.scrollTo(0, appPrefs.scrollY);
+        
+        if(!mount.current){
+            mount.current = true;
+            window.scrollTo(0, appPrefs.scrollY);
+        }
 
         // Equivale a ComponentDidUnmount()
         // return () => dispatch(resetRecipes());
