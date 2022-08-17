@@ -46,9 +46,13 @@ export default function RecipeCard({props}){
         dispatch(deleteRecipe(props.id));
     }
 
+    function saveScrollY(){
+        dispatch(saveAppPrefs({scrollY: window.scrollY}));
+    }
+
     // editar un elemento
     function editItem(){
-        dispatch(saveAppPrefs({scrollY: window.scrollY}))
+        saveScrollY();
         history.push(`/edit/${props.id}`);
     }
 
@@ -82,7 +86,7 @@ export default function RecipeCard({props}){
                         <p className={dietsFormat.length < 7 ? "txtDiets" : "txtDiets fixDiet"} key={props.id + i}>{diet}</p>
                     )} 
             </div>        
-            <Link className='notLine' to={`/home/${props.id}`}>
+            <Link className='notLine' to={`/home/${props.id}`} onClick={saveScrollY}>
                 <footer className="recipeFooter">            
                     <p>Details</p>
                 </footer>
