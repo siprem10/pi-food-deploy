@@ -106,9 +106,6 @@ export default function CreateRecipe({id, toEdit}) {
             !inputState.name ||
             !inputState.summary ||
             !inputState.healthScore ||
-            !inputState.imgUri ||
-            /* !(inputState.steps || inputState.steps.length) ||
-            !(inputState.diets || inputState.diets.length) || */
             inputError.name ||
             inputError.summary ||
             inputError.healthScore ||
