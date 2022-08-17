@@ -55,14 +55,14 @@ export default function Sort() {
     // estado para ver/ocultar menu
     function toggle(){
         setMenu({...menu, toggle: !menu.toggle});
-        console.log("toggle");
+        //console.log("toggle");
     }
 
     // al clickear en una opcion
     function optionClick(e){
 
         const id = Number(e.target.id);
-        console.log(id);
+        //console.log(id);
 
         // si la opción no está seleccionada
         if(menu.selectOptionId !== id){
@@ -75,7 +75,7 @@ export default function Sort() {
             });
 
             setSort(sorts[id].value);
-            console.log("update");
+            //console.log("update");
         } else {
             toggle();
         }        
