@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from 'react-router-dom';
-import { getAllRecipes} from '../../redux/actions/actions.js';
+import { getAllRecipes, saveAppPrefs} from '../../redux/actions/actions.js';
 import Header from '../Header/Header.jsx';
 import Pagination from '../Pagination/Pagination.jsx';
 import RecipeCards from "../RecipeCards/RecipeCards.jsx";
@@ -15,18 +15,21 @@ export default function Home() {
 
     // Me traigo 
     const recipesAll = useSelector(state => state.recipes);
+    const appPrefs = useSelector(state => state.appPrefs);
    
     const [loading, setLoading] = useState(false); // renderizo loading hasta que termine la petición
-    const [currentPage, setCurrentPage] = useState(1); // pág actual (donde estoy parado)
+    const [currentPage, setCurrentPage] = useState(appPrefs.pageNum); // pág actual (donde estoy parado)
     const [cardsPerPage/* , setCardsPerPage */] = useState(9); // cant máx de cards por pág
 
     // Equivale a ComponentDidMount()
     React.useEffect(() => {
-        dispatch(getAllRecipes(setLoading, query));
+        if(!recipesAll || !recipesAll.length){
+            dispatch(getAllRecipes(setLoading, query));
+        }
 
         // Equivale a ComponentDidUnmount()
         // return () => dispatch(resetRecipes());
-    }, [dispatch, query]);
+    }, [dispatch, recipesAll, query]);
 
     // Obtengo tarjetas actuales (pág)
     const indexOfLastCard = currentPage * cardsPerPage; // ultimo elm tarjeta (2 * 9 = 18 total tarjetas)
@@ -40,6 +43,7 @@ export default function Home() {
         // seteo solo si no es la misma
         if(newPageNum !== -1 && newPageNum !== currentPage){
             setCurrentPage(newPageNum);
+            dispatch(saveAppPrefs({pageNum: newPageNum})); /* guardo la pref */
         }
     }
     

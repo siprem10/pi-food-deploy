@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { filterRecipes } from '../../redux/actions/actions.js';
+import { useDispatch, useSelector } from "react-redux";
+import { filterRecipes, saveAppPrefs } from '../../redux/actions/actions.js';
 import { Link } from "react-router-dom";
 import ic_recipe from "../../assets/ic_recipe.png";
 import ic_linkedin from "../../assets/ic_linkedin2.png";
@@ -15,10 +15,11 @@ export default function Header({loading, setPaginate}) {
 
     const dispatch = useDispatch();
     const mount = useRef(false);
+    const appPrefs = useSelector(state => state.appPrefs);
 
     const [filters, setFilters] = useState({
-        search:  "", // algun string
-        filter: "" // algunaDieta
+        search:  appPrefs.search, // algun string
+        filter: appPrefs.filter // algunaDieta
     });
 
     function setFilter(name, value){  
@@ -30,6 +31,7 @@ export default function Header({loading, setPaginate}) {
             mount.current = true;
         } else if(filters){
             setPaginate(1);          
+            dispatch(saveAppPrefs(filters));
             dispatch(filterRecipes(filters));
         }
         //eslint-disable-next-line
@@ -63,7 +65,7 @@ export default function Header({loading, setPaginate}) {
                     <div className="headerNav">
                         <div className="headerNav2">
                             <div className="headerSort">
-                                <Sort setFilter={setFilter} sort={filters.sort} />
+                                <Sort sortOption={appPrefs.sort}/>
                             </div>
                             <div className="headerFilter">
                                 <Filter setFilter={setFilter} filter={filters.filter}/>

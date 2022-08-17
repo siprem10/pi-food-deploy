@@ -30,8 +30,8 @@ export default function Filter({setFilter, filter}) {
     return (        
         <div className="filterContainer">
             <div className="filterDiv">
-                <select onClick={onFilter} name="filter">
-                    <option value={""} defaultValue>All</option>
+                <select value={filter} onChange={onFilter} name="filter">
+                    <option value={""}>All</option>
                     {diets && diets?.map((diet, i) =>
                         <option key={i} value={diet.name}>{diet.name}</option>                    
                     )}                

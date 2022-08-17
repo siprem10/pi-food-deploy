@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { sortRecipes } from "../../redux/actions/actions";
+import { saveAppPrefs, sortRecipes } from "../../redux/actions/actions";
 import ic_menu from "../../assets/ic_menu.png";
 import ic_az from "../../assets/ic_az.png";
 import ic_za from "../../assets/ic_za.png";
@@ -8,7 +8,7 @@ import ic_heart_plus from "../../assets/ic_heart_plus.png";
 import ic_heart_minus from "../../assets/ic_heart_minus.png";
 import "./Sort.css";
 
-export default function Sort() {
+export default function Sort({sortOption}) {
   
     const sorts = [
         {
@@ -37,13 +37,28 @@ export default function Sort() {
         }
     ]; 
 
+    function findId(){
+        const find = sorts.find(e => e.option === sortOption);
+
+        if(!find){
+            return {
+                selectOption: "Sort",
+                selectOptionId: -1,
+                selectIc: "",
+                toggle: false
+            }
+        }
+
+        return {
+            selectOption: find.option,
+            selectOptionId: find.id,
+            selectIc: find.img,
+            toggle: false
+        };
+    }
+
     const dispatch = useDispatch();
-    const [menu, setMenu] = useState({
-        selectOption: "Sort",
-        selectOptionId: -1,
-        selectIc: "",
-        toggle: false
-    }); 
+    const [menu, setMenu] = useState(findId()); 
 
     const [sort, setSort] = useState("");
 
@@ -75,6 +90,7 @@ export default function Sort() {
             });
 
             setSort(sorts[id].value);
+            dispatch(saveAppPrefs({sort: sorts[id].option}));
             //console.log("update");
         } else {
             toggle();

@@ -14,6 +14,8 @@ export const FILTER_RECIPES = "FILTER_RECIPES";
 export const DELETE_RECIPE = "DELETE_RECIPE";
 export const UPDATE_RECIPE = "UPDATE_RECIPE";
 
+export const SAVE_APP_PREFS = "SAVE_APP_PREFS";
+
 export const getAllRecipes = (setLoading, query) => {
 
     setLoading(true);
@@ -119,4 +121,8 @@ export const sortRecipes = (sort) => {
 
 export const filterRecipes = (filter) => {
     return {type: FILTER_RECIPES, payload: filter};        
+};
+
+export const saveAppPrefs = (pref) => {
+    return {type: SAVE_APP_PREFS, payload: pref};        
 };

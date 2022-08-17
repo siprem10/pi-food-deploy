@@ -8,7 +8,8 @@ import {
     UPDATE_RECIPE,
     GET_ALL_DIETS,
     SORT_RECIPES,
-    FILTER_RECIPES
+    FILTER_RECIPES,
+    SAVE_APP_PREFS
 }
 from "../actions/actions.js"
 
@@ -17,7 +18,8 @@ const initialState = {
     recipesAll: [], /* es una copia que contiene todo */
     recipes: [],
     recipeDetail: {},
-    diets: []
+    diets: [],
+    appPrefs: {pageNum: 1, filter: "", search: "", sort: ""}
 };
 
 // reducer
@@ -118,18 +120,12 @@ const rootReducer = (state = initialState, action) => {
             }            
         }
     } 
-    /* case SEARCH_RECIPES: {
-
-        const search = action.payload.toLowerCase();
-        // busqueda
-        // busqueda sobre el recipesCurrent, modifica al current
-        // (es al current porque puede tener un filtro puesto)
-
-        const currentCopy = state.recipes.map(e=>e);
-
-        return {...state, recipes: currentCopy.filter(e => e.name.toLowerCase().includes(search))}        
-        //return {...state, recipes: filterArray(state.recipesAll, filter)}          
-    } */
+    case SAVE_APP_PREFS: {
+        return {
+            ...state,
+            appPrefs: {...state.appPrefs, ...action.payload}            
+        }
+    } 
     default: return state;
     }
 };
