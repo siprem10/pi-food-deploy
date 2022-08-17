@@ -214,10 +214,9 @@ export default function CreateRecipe({id, toEdit}) {
         const result = await postImageToCloudinary(e);
     
         if (result) {          
-        updateState(e.target.name, result);
-        } else {
-          e.target.value = '';
+            updateState(e.target.name, result);
         }
+        e.target.value = '';
       }
 
     // guardo las dietas en el array
