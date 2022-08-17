@@ -11,28 +11,28 @@ import ic_css from "../../assets/ic_css.png";
 import ic_express from "../../assets/ic_express.png";
 import ic_nodejs from "../../assets/ic_nodejs.png";
 import ic_linkedin from "../../assets/ic_linkedin.png";
-import { SetBodyImg } from '../methods.js';
+import { myLinkedin, SetBodyImg } from '../methods.js';
 import "./About.css";
 
 export default function About() {
 
     const techs = [
+        {name: "JavaScript", icon: ic_javascript},
         {name: "React", icon: ic_react},
         {name: "Redux", icon: ic_redux},
-        {name: "JavaScript", icon: ic_javascript},
+        {name: "HTML", icon: ic_html},
+        {name: "CSS", icon: ic_css},
+        {name: "Node.js", icon: ic_nodejs},
+        {name: "Express", icon: ic_express},
         {name: "Sequelize", icon: ic_sequelize},
         {name: "PostgreSQL", icon: ic_postgresql},
-        {name: "CSS", icon: ic_css},
-        {name: "HTML", icon: ic_html},
-        {name: "Express", icon: ic_express},
-        {name: "Node.js", icon: ic_nodejs},
     ];    
 
     SetBodyImg("aboutBackground");
 
     return (        
         <div className="aboutDiv">
-            <a className="notLine" target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/rami-dominguez-b92a08233/">
+            <a className="notLine" target="_blank" rel="noreferrer" href={myLinkedin}>
                 <div className="aboutCreator">
                         <h1>Created by</h1>
                         <h2>Ramiro Dominguez</h2>

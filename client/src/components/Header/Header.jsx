@@ -8,6 +8,7 @@ import SearchBar from "../SearchBar/SearchBar.jsx";
 import Sort from "../Sort/Sort.jsx";
 import Filter from "../Filter/Filter.jsx";
 import HeaderLoading from "../HeaderLoading/HeaderLoading.jsx";
+import { myLinkedin } from "../methods.js";
 import "./Header.css";
 
 export default function Header({loading, setPaginate}) {
@@ -48,7 +49,7 @@ export default function Header({loading, setPaginate}) {
                             <h2>About</h2>  
                         </div>
                     </Link>                        
-                    <a className="notLine" target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/rami-dominguez-b92a08233/">
+                    <a className="notLine" target="_blank" rel="noreferrer" href={myLinkedin}>
                         <div className="headerDev">
                             <img src={ic_linkedin} alt="not found"></img>
                             <h2>{"Ramiro Domínguez"}</h2>

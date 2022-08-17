@@ -36,3 +36,5 @@ export async function postImageToCloudinary(e) {
       return undefined;
     }
 }
+
+export const myLinkedin = "https://www.linkedin.com/in/rami-dominguez-full-stack/";
