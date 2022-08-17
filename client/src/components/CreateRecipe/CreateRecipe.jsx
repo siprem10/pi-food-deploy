@@ -38,6 +38,9 @@ export default function CreateRecipe({id, toEdit}) {
     /* Guardo el target del campo img */
     const fileImg = useRef(null);
 
+    /* Para saber si esta subiendo la img */
+    const [isSubmited, setSubmited] = useRef(false);
+
     /* Estado de errores */
     const [inputError, setInputError] = React.useState({
         name: "",
@@ -106,6 +109,7 @@ export default function CreateRecipe({id, toEdit}) {
     function isButtonDisabled(){
 
         return (
+            isSubmited ||
             !inputState.name ||
             !inputState.summary ||
             !inputState.healthScore ||
@@ -214,6 +218,7 @@ export default function CreateRecipe({id, toEdit}) {
     }
 
     async function setImg(e) {
+        setSubmited(true);
         const result = await postImageToCloudinary(e);
     
         if (result) {          
@@ -221,6 +226,7 @@ export default function CreateRecipe({id, toEdit}) {
         } else {
           e.target.value = '';
         }
+        setSubmited(false);
     }
 
     // guardo las dietas en el array
