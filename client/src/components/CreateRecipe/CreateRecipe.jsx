@@ -39,7 +39,7 @@ export default function CreateRecipe({id, toEdit}) {
     const fileImg = useRef(null);
 
     /* Para saber si esta subiendo la img */
-    const [isSubmited, setSubmited] = useRef(false);
+    const [isSubmited, setSubmited] = useState(false);
 
     /* Estado de errores */
     const [inputError, setInputError] = React.useState({
