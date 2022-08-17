@@ -217,7 +217,7 @@ export default function CreateRecipe({id, toEdit}) {
             updateState(e.target.name, result);
         }
         e.target.value = '';
-      }
+    }
 
     // guardo las dietas en el array
     function handleOnCheck(e){
