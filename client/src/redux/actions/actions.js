@@ -29,6 +29,18 @@ export const getAllRecipes = (setLoading, query) => {
         .finally(()=> setLoading(false));  
     };
 };
+
+export const refreshRecipes = () => {
+
+    return function (dispatch) {
+      axios.get(`/recipes`)
+        .then(response => response.data)
+        .then(response => {
+            dispatch({ type: GET_ALL_RECIPES, payload: response });
+        })
+        .catch(error => console.log(new Error(error)))
+    };
+};
  
 /*
 return async
