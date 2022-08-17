@@ -31,9 +31,12 @@ export default function CreateRecipe({id, toEdit}) {
         summary: "",
         healthScore: "",
         steps: [], // pasos para la reseta
-        imgUri: "",
+        imgUri: "default",
         diets: [] // posiciones
-    });    
+    });   
+        
+    /* Guardo el target del campo img */
+    const fileImg = useRef(null);
 
     /* Estado de errores */
     const [inputError, setInputError] = React.useState({
@@ -215,8 +218,9 @@ export default function CreateRecipe({id, toEdit}) {
     
         if (result) {          
             updateState(e.target.name, result);
+        } else {
+          e.target.value = '';
         }
-        e.target.value = '';
     }
 
     // guardo las dietas en el array
@@ -311,12 +315,15 @@ export default function CreateRecipe({id, toEdit}) {
     }
 
     function resetStates(){
+        if(fileImg && fileImg.current.value.length){
+            fileImg.current.value = "";
+        }
         setInputState({
             name: "",
             summary: "",
             healthScore: "",
             steps: [],
-            imgUri: "",
+            imgUri: "default",
             diets: []
         }); 
         setInputError({
@@ -408,6 +415,7 @@ export default function CreateRecipe({id, toEdit}) {
             <label>Image</label>
             <div className="col">
                 <input 
+                    ref={fileImg}
                     placeholder="Image"
                     type="file"
                     name="imgUri"
