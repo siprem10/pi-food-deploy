@@ -46,22 +46,20 @@ const rootReducer = (state = initialState, action) => {
         }
     }
     case ADD_RECIPE: {
-        /* no haria falta porque está en otra vista y se vuelve a hacer el GET_ALL_RECIPES ya vuelvo a tener todo */
-        /* solo seria necesario si estoy en la misma vista */
         return {
             ...state,
             recipesAll: state.recipes.concat(action.payload),
             recipes: state.recipes.concat(action.payload)
         }
     } 
-    case DELETE_RECIPE: { // borrar solo de la db
+    case DELETE_RECIPE: {
         return {
             ...state,
             recipesAll: state.recipes.filter(e => e.id !== action.payload),
             recipes: state.recipes.filter(e => e.id !== action.payload)
         }
     }
-    case UPDATE_RECIPE: { // actualizar solo de la db
+    case UPDATE_RECIPE: {
         return {
             ...state //?            
         }
