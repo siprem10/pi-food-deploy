@@ -65,7 +65,7 @@ export default function Header({loading, setPaginate}) {
                     <div className="headerNav">
                         <div className="headerNav2">
                             <div className="headerSort">
-                                <Sort sortOption={appPrefs.sort}/>
+                                <Sort sortPref={appPrefs.sort}/>
                             </div>
                             <div className="headerFilter">
                                 <Filter setFilter={setFilter} filter={filters.filter}/>

@@ -8,7 +8,7 @@ import ic_heart_plus from "../../assets/ic_heart_plus.png";
 import ic_heart_minus from "../../assets/ic_heart_minus.png";
 import "./Sort.css";
 
-export default function Sort({sortOption}) {
+export default function Sort({sortPref}) {
   
     const sorts = [
         {
@@ -35,10 +35,19 @@ export default function Sort({sortOption}) {
             value: "-HS",
             img: ic_heart_minus,
         }
-    ]; 
+    ];
 
+    const dispatch = useDispatch();
+    const [menu, setMenu] = useState(findId()); 
+    const [sort, setSort] = useState(sortPref.value);
+
+    // hago la petición
+    useEffect(() => {
+        dispatch(sortRecipes(sort));
+    }, [dispatch, sort]);
+     
     function findId(){
-        const find = sorts.find(e => e.option === sortOption);
+        const find = sorts.find(e => e.option === sortPref.option);
 
         if(!find){
             return {
@@ -56,16 +65,6 @@ export default function Sort({sortOption}) {
             toggle: false
         };
     }
-
-    const dispatch = useDispatch();
-    const [menu, setMenu] = useState(findId()); 
-
-    const [sort, setSort] = useState("");
-
-    // hago la petición
-    useEffect(() => {
-        dispatch(sortRecipes(sort));
-    }, [dispatch, sort]);
 
     // estado para ver/ocultar menu
     function toggle(){
@@ -90,7 +89,7 @@ export default function Sort({sortOption}) {
             });
 
             setSort(sorts[id].value);
-            dispatch(saveAppPrefs({sort: sorts[id].option}));
+            dispatch(saveAppPrefs({sort: {option: sorts[id].option, value: sorts[id].value}}));
             //console.log("update");
         } else {
             toggle();
