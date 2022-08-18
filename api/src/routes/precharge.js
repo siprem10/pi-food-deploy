@@ -19,7 +19,7 @@ async function preChargeRecipes(){
                 healthScore: result.healthScore,
                 steps: result.analyzedInstructions[0]?.steps.map(data => data.step), // lo agrega solo si existe
                 imgUri: result.image,
-                diets: (result.diets && result.diets.length) ? result.diets : ["Not specified"]
+                diets: (result.diets && result.diets.length) ? result.diets : [1]
             };
             return recipeFormat;
         });
@@ -29,6 +29,11 @@ async function preChargeRecipes(){
         for(let i=0; i < recipesApi.length; i++){
 
             const api = recipesApi[i];
+
+            // me fijo que no exista
+            const exists = await Recipe.findOne({where: {name: api.name}}); 
+
+            if(exists) return;
             
             // creo en la db la nueva Receta
             const newRecipe = await Recipe.create({
