@@ -5,9 +5,7 @@ require("dotenv").config();
 
 
 // Syncing all the models at once.
-conn.sync({ force: false }).then(() => {
-    preChargeDiets(); // lo desactivo
-    preChargeRecipes(); // lo desactivo
+conn.sync({ force: true }).then(() => {
     server.listen(process.env.PORT, () => {
         console.log(`%s listening at ${process.env.PORT}`);
     });
