@@ -17,7 +17,7 @@ async function preChargeRecipes(){
                 name: result.title,
                 summary: result.summary?.replace(/<\/?[^>]+(>|$)/g, ""),
                 healthScore: result.healthScore,
-                steps: result.analyzedInstructions[0]?.steps.map(data => data.step), // lo agrega solo si existe
+                steps: result.analyzedInstructions[0] ? result.analyzedInstructions[0].steps.map(data => data.step) : ["..."], // lo agrega solo si existe
                 imgUri: result.image,
                 diets: (result.diets && result.diets.length) ? result.diets : [1]
             };
