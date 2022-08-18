@@ -48,8 +48,8 @@ const rootReducer = (state = initialState, action) => {
     case ADD_RECIPE: {
         return {
             ...state,
-            recipesAll: [...state.recipesAll, action.payload],
-            recipes: [...state.recipes, action.payload]
+            recipesAll: state.recipesAll.concat(action.payload),
+            recipes: state.recipes.concat(action.payload)
         }
     } 
     case DELETE_RECIPE: {
