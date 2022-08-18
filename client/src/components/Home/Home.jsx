@@ -24,19 +24,16 @@ export default function Home() {
     const [cardsPerPage/* , setCardsPerPage */] = useState(9); // cant máx de cards por pág
 
     // Equivale a ComponentDidMount()
-    React.useEffect(() => {
-        if(!recipesAll || !recipesAll.length){
-            dispatch(getAllRecipes(setLoading, query));
-        }
-        
+    React.useEffect(() => {        
         if(!mount.current){
-            mount.current = true;
+            dispatch(getAllRecipes(setLoading, query));
             window.scrollTo(0, appPrefs.scrollY);
+            mount.current = true;
         }
 
         // Equivale a ComponentDidUnmount()
         // return () => dispatch(resetRecipes());
-    }, [dispatch, recipesAll, query, appPrefs]);
+    }, [dispatch, query, appPrefs]);
 
     // Obtengo tarjetas actuales (pág)
     const indexOfLastCard = currentPage * cardsPerPage; // ultimo elm tarjeta (2 * 9 = 18 total tarjetas)
