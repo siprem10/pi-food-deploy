@@ -30,7 +30,7 @@ export const getAllRecipes = (setLoading, query) => {
     };
 };
 
-export const refreshRecipes = () => {
+/* export const refreshRecipes = () => {
 
     return function (dispatch) {
       axios.get(`/recipes`)
@@ -40,7 +40,7 @@ export const refreshRecipes = () => {
         })
         .catch(error => console.log(new Error(error)))
     };
-};
+}; */
  
 /*
 return async

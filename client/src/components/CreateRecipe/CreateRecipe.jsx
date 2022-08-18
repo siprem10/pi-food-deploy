@@ -357,7 +357,6 @@ export default function CreateRecipe({id, toEdit}) {
             resetStates();
         } else {
             dispatch(updateRecipe(toEdit.id, inputState));
-            setTimeout(() => dispatch(refreshRecipes()));
             alert(`Recipe ${inputState.name} edited sucessfully!`);
             redirectTo("/home");
         } 
