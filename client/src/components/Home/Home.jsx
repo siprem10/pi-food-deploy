@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { useRef } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from 'react-router-dom';
-import { getAllRecipes, saveAppPrefs} from '../../redux/actions/actions.js';
+import { getAllWithFilter, saveAppPrefs} from '../../redux/actions/actions.js';
 import Header from '../Header/Header.jsx';
 import Pagination from '../Pagination/Pagination.jsx';
 import RecipeCards from "../RecipeCards/RecipeCards.jsx";
@@ -26,7 +26,11 @@ export default function Home() {
     // Equivale a ComponentDidMount()
     React.useEffect(() => {        
         if(!mount.current){
-            dispatch(getAllRecipes(setLoading, query));
+            dispatch(getAllWithFilter(
+                setLoading,
+                query,
+                {search: appPrefs.search, filter: appPrefs.filter}
+            ));
             window.scrollTo(0, appPrefs.scrollY);
             mount.current = true;
         }

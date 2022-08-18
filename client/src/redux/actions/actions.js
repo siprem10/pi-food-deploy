@@ -30,6 +30,21 @@ export const getAllRecipes = (setLoading, query) => {
     };
 };
 
+export const getAllWithFilter = (setLoading, query, filter) => {
+
+    setLoading(true);
+    return function (dispatch) {
+      axios.get(`/recipes${query}`)
+        .then(response => response.data)
+        .then(response => {
+            dispatch({ type: GET_ALL_RECIPES, payload: response });
+            dispatch({ type: FILTER_RECIPES, payload: filter });
+        })
+        .catch(error => console.log(new Error(error)))
+        .finally(()=> setLoading(false));  
+    };
+};
+
 /* export const refreshRecipes = () => {
 
     return function (dispatch) {
