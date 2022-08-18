@@ -27,9 +27,7 @@ export default function Header({loading, setPaginate}) {
     }
 
     useEffect(()=>{
-        if(!mount.current){
-            mount.current = true;
-        } else if(filters){
+        if(filters){
             setPaginate(1);          
             dispatch(saveAppPrefs(filters));
             dispatch(filterRecipes(filters));
