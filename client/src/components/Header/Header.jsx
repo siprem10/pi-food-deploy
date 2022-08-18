@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { filterRecipes, saveAppPrefs } from '../../redux/actions/actions.js';
 import { Link } from "react-router-dom";
@@ -14,7 +14,6 @@ import "./Header.css";
 export default function Header({loading, setPaginate}) {
 
     const dispatch = useDispatch();
-    const mount = useRef(false);
     const appPrefs = useSelector(state => state.appPrefs);
 
     const [filters, setFilters] = useState({
