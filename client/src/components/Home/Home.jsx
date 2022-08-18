@@ -23,14 +23,6 @@ export default function Home() {
     const [currentPage, setCurrentPage] = useState(appPrefs.pageNum); // pág actual (donde estoy parado)
     const [cardsPerPage/* , setCardsPerPage */] = useState(9); // cant máx de cards por pág
 
-    // Obtengo tarjetas actuales (pág)
-    const indexOfLastCard = currentPage * cardsPerPage; // ultimo elm tarjeta (2 * 9 = 18 total tarjetas)
-    /* console.log(indexOfLastCard) */
-    const indexOfFirstCard = indexOfLastCard - cardsPerPage; // primer elm tarjeta (18 - 9 = 9)
-    /*  console.log(indexOfFirstCard) */
-    const currentRecipes = recipesAll.slice(indexOfFirstCard, indexOfLastCard); /* el array que tiene todo devuelvo una copia con lo de ese rango*/
-
-
     // Equivale a ComponentDidMount()
     React.useEffect(() => {        
         if(!mount.current){
@@ -46,6 +38,13 @@ export default function Home() {
         // Equivale a ComponentDidUnmount()
         // return () => dispatch(resetRecipes());
     }, [dispatch, query, appPrefs]);
+
+    // Obtengo tarjetas actuales (pág)
+    const indexOfLastCard = currentPage * cardsPerPage; // ultimo elm tarjeta (2 * 9 = 18 total tarjetas)
+    /* console.log(indexOfLastCard) */
+    const indexOfFirstCard = indexOfLastCard - cardsPerPage; // primer elm tarjeta (18 - 9 = 9)
+   /*  console.log(indexOfFirstCard) */
+    const currentRecipes = recipesAll.slice(indexOfFirstCard, indexOfLastCard); /* el array que tiene todo devuelvo una copia con lo de ese rango*/
 
     // Cambiar de pág
     function setPaginate(newPageNum){
