@@ -87,6 +87,7 @@
                 font-family: var(--bodyFont);
                 font-size: 14px;
                 color: rgba(255, 113, 78, 255);
+                padding-left: 4px;
             }
 
             .headerDev img{
