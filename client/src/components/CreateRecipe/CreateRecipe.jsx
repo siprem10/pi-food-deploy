@@ -2,15 +2,12 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { addRecipe, getAllDiets, updateRecipe } from '../../redux/actions/actions.js';
-import { addDefaultSrc, postImageToCloudinary } from '../../utils/methods.js';
+import { addDefaultSrc, alert, postImageToCloudinary } from '../../utils/methods.js';
 import img_empty_recipe from "../../assets/img_err_recipe.png"
 import "./CreateRecipe.css"
 
 /* deberia ser form */
 export default function CreateRecipe({id, toEdit}) {
-
-    // los carteles de error deberian aparecer/desaparecer con alguna anim
-    // el alert podria ser reemplazado con un txt debajo (color verde)
 
     // Relacionado a editar
     const [edit] = useState(isEdit());
@@ -353,11 +350,11 @@ export default function CreateRecipe({id, toEdit}) {
 
         if(!edit){
             dispatch(addRecipe(inputState));
-            alert(`Recipe ${inputState.name} created sucessfully!`);
+            alert(inputState.name, "Recipe created sucessfully!");
             resetStates();
         } else {
             dispatch(updateRecipe(toEdit.id, inputState));
-            alert(`Recipe ${inputState.name} edited sucessfully!`);
+            alert(inputState.name, "Recipe edited sucessfully!");
             redirectTo("/home");
         } 
     }

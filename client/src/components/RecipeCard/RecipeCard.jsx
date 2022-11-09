@@ -6,6 +6,8 @@ import ic_delete from "../../assets/ic_delete.png"
 import ic_edit from "../../assets/ic_edit.png"
 import ic_heart from "../../assets/ic_heart4.png"
 import { addDefaultSrc } from '../../utils/methods.js';
+import Swal from 'sweetalert2';
+
 import "./RecipeCard.css";
 
 export default function RecipeCard({props}){
@@ -42,8 +44,20 @@ export default function RecipeCard({props}){
     
     // borrar un elemento
     function deleteItem(){
-        if(!window.confirm(`Are you sure you want to delete the ${props.name} recipe?`)) return;
-        dispatch(deleteRecipe(props.id));
+        Swal.fire({
+            title: `${props.name}`,
+            text: "Are you sure you want to delete recipe?",
+            showCancelButton: true,
+            confirmButtonText: 'Yes',
+            cancelButtonText: 'No',
+            cancelButtonColor: '#ff714e',
+          }).then((result) => {
+        
+            if(result.isConfirmed) {
+                dispatch(deleteRecipe(props.id));
+                Swal.fire('Recipe deleted!', '', 'success');
+            }
+          })
     }
 
     function saveScrollY(){

@@ -40,10 +40,11 @@ export async function postImageToCloudinary(e) {
 
 export const myLinkedin = "https://www.linkedin.com/in/rami-dominguez-full-stack/";
 
-export function alert(title, text) {    
+export function alert(title, text, icon = 'success') {    
   Swal.fire({
-      icon: 'error',
+      icon: icon ?? "error",
       title: title,
       text: text,
+      confirmButtonColor: '#ff714e'
    })
 }
