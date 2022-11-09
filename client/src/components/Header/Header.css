@@ -16,7 +16,6 @@
     }
 
     .imgHeaderDiv{
-        position: relative;
         display: flex;
         flex-direction: column;
         height: 100%;
@@ -30,8 +29,6 @@
         .headerAbout{
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
             height: 100px;
             width: 100%;
             margin-top: 53px;
@@ -184,35 +181,3 @@
         transform: translateX(0px);
     }
 }
-
-/* .headerContainer {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 250px;
-    background-color: rgba(0,152,136,255);
-}
-
-    .rowImgSearchDiv{
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        height: 60%;
-    }
-
-        .rowFirst{
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: 100%;
-        }            
-            .icHome{
-                height: 50px;
-                width: 50px;
-                margin-right: 15px;
-            }
-            .seachbara{
-                padding-right: 60px;
-            } */
