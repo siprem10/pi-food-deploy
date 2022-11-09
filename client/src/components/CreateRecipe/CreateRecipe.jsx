@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { addRecipe, getAllDiets, updateRecipe } from '../../redux/actions/actions.js';
 import { addDefaultSrc, alert, postImageToCloudinary } from '../../utils/methods.js';
-import img_empty_recipe from "../../assets/img_err_recipe.png"
+import img_empty_recipe from "../../assets/img_err_recipe.jpg"
 import "./CreateRecipe.css"
 
 /* deberia ser form */

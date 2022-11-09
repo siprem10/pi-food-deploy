@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { filterRecipes, saveAppPrefs } from '../../redux/actions/actions.js';
 import { Link } from "react-router-dom";
 import ic_recipe from "../../assets/ic_recipe.png";
-import ic_linkedin from "../../assets/ic_linkedin2.png";
+import ic_linkedin from "../../assets/ic_linkedin.png";
 import SearchBar from "../SearchBar/SearchBar.jsx";
 import Sort from "../Sort/Sort.jsx";
 import Filter from "../Filter/Filter.jsx";

@@ -1,16 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ic_recipe from "../../assets/ic_recipe.png";
-import ic_react from "../../assets/ic_react.png";
-import ic_redux from "../../assets/ic_redux.png";
-import ic_javascript from "../../assets/ic_javascript.png";
-import ic_sequelize from "../../assets/ic_sequelize.png";
-import ic_postgresql from "../../assets/ic_postgresql.png";
-import ic_html from "../../assets/ic_html.png";
-import ic_css from "../../assets/ic_css.png";
-import ic_express from "../../assets/ic_express.png";
-import ic_nodejs from "../../assets/ic_nodejs.png";
-import ic_linkedin from "../../assets/ic_linkedin.png";
+import ic_react from "../../assets/about/ic_react.png";
+import ic_redux from "../../assets/about/ic_redux.png";
+import ic_javascript from "../../assets/about/ic_javascript.png";
+import ic_sequelize from "../../assets/about/ic_sequelize.png";
+import ic_postgresql from "../../assets/about/ic_postgresql.png";
+import ic_html from "../../assets/about/ic_html.png";
+import ic_css from "../../assets/about/ic_css.png";
+import ic_express from "../../assets/about/ic_express.png";
+import ic_nodejs from "../../assets/about/ic_nodejs.png";
+import ic_linkedin from "../../assets/about/ic_linkedin.png";
 import { myLinkedin, SetBodyImg } from '../../utils/methods.js';
 import "./About.css";
 

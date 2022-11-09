@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { saveAppPrefs, sortRecipes } from "../../redux/actions/actions";
-import ic_menu from "../../assets/ic_menu.png";
-import ic_az from "../../assets/ic_az.png";
-import ic_za from "../../assets/ic_za.png";
-import ic_heart_plus from "../../assets/ic_heart_plus.png";
-import ic_heart_minus from "../../assets/ic_heart_minus.png";
+import ic_menu from "../../assets/menu/ic_menu.png";
+import ic_az from "../../assets/sort/ic_az.png";
+import ic_za from "../../assets/sort/ic_za.png";
+import ic_heart_plus from "../../assets/sort/ic_heart_plus.png";
+import ic_heart_minus from "../../assets/sort/ic_heart_minus.png";
 import "./Sort.css";
 
 export default function Sort({sortPref}) {

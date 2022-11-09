@@ -1,4 +1,4 @@
-import img_err_recipe from "../assets/img_err_recipe.png"
+import img_err_recipe from "../assets/img_err_recipe.jpg";
 import { useEffect } from "react";
 import Swal from "sweetalert2";
 

@@ -1,6 +1,6 @@
 import React from "react";
 import ic_recipe from "../../assets/ic_recipe.png";
-import ic_linkedin from "../../assets/ic_linkedin2.png";
+import ic_linkedin from "../../assets/ic_linkedin.png";
 import { Link } from "react-router-dom";
 import "./HeaderLoading.css";
 
