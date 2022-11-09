@@ -7,8 +7,6 @@ import App from './App.js'; // componente App
 import reportWebVitals from './reportWebVitals';
 import "./components/styles/index.css"; // estilos
 import axios from "axios";
-import dotenv from "dotenv";
-dotenv.config();
 
 axios.defaults.baseURL = process.env.REACT_APP_API || "http://localhost:3001";
 
