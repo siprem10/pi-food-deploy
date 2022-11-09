@@ -12,11 +12,13 @@
 }
 
 .aboutFlex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: relative;
     height: fit-content;
     width: 55%;
-    display: flex;
-    flex-direction: column;
     background-color: rgba(136, 136, 136, 0.5);
     margin: auto;
     backdrop-filter: blur(2px);
@@ -100,7 +102,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        /* align-items: flex-start; */
+        align-items: center;
         width: 100%;
     }
 
@@ -132,6 +134,10 @@
         }
 
         .aboutCreator{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             position: relative;
             height: fit-content;
             background-color: rgba(0, 221, 255, 0.6);
