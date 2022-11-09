@@ -5,7 +5,7 @@ import { deleteRecipe, saveAppPrefs } from '../../redux/actions/actions';
 import ic_delete from "../../assets/ic_delete.png"
 import ic_edit from "../../assets/ic_edit.png"
 import ic_heart from "../../assets/ic_heart4.png"
-import { addDefaultSrc } from '../../utils/methods.js';
+import { addDefaultSrc, alert } from '../../utils/methods.js';
 import Swal from 'sweetalert2';
 
 import "./RecipeCard.css";
@@ -55,7 +55,7 @@ export default function RecipeCard({props}){
         
             if(result.isConfirmed) {
                 dispatch(deleteRecipe(props.id));
-                Swal.fire('Recipe deleted!', '', 'success');
+                alert('Recipe deleted!');
             }
           })
     }
