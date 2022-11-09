@@ -11,13 +11,13 @@ import NotFound from "./components/NotFound/NotFound";
 function App() {
     return (
         <Routes>
+            <Route exact path="*" element={ <NotFound subtitle={"Page not found!"} /> } />
             <Route exact path="/" element={ <LandingPage /> } />
             <Route exact path="/home" element={ <Home/> } />
             <Route exact path="/home/:id" element={ <Detail /> } />
             <Route exact path="/form" element={ <Form /> } />
             <Route exact path="/edit/:id" element={ <EditRecipe /> } />
             <Route exact path="/about" element={ <About /> } />
-            <Route path="/" element={ <NotFound subtitle={"Page not found!"} /> } />
         </Routes>
     );
 }
