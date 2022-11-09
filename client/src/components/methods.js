@@ -1,5 +1,6 @@
 import img_err_recipe from "../assets/img_err_recipe.png"
 import { useEffect } from "react";
+import Swal from "sweetalert2";
 
 export function addDefaultSrc(e){
     e.target.src = img_err_recipe;
@@ -38,3 +39,11 @@ export async function postImageToCloudinary(e) {
 }
 
 export const myLinkedin = "https://www.linkedin.com/in/rami-dominguez-full-stack/";
+
+export function alert(title, text) {    
+  Swal.fire({
+      icon: 'error',
+      title: title,
+      text: text,
+   })
+}
