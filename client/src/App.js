@@ -1,5 +1,5 @@
 import "./components/styles/App.css";
-import { Switch, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import LandingPage from "./components/LandingPage/LandingPage.jsx";
 import Home from "./components/Home/Home.jsx";
 import Detail from "./components/Detail/Detail";
@@ -10,17 +10,15 @@ import NotFound from "./components/NotFound/NotFound";
 
 function App() {
     return (
-        <div className="App">
-            <Switch>
-                <Route exact path="/" render={ ()=> <LandingPage/> } />
-                <Route exact path="/home" render={ ()=> <Home/> } />
-                <Route exact path="/home/:id" render={ ()=> <Detail/> } />
-                <Route exact path="/form" render={ ()=> <Form/> } />
-                <Route exact path="/edit/:id" render={ ()=> <EditRecipe/> } />
-                <Route exact path="/about" render={ ()=> <About/> } />
-                <Route path="/" render={ ()=> <NotFound subtitle={"Page not found!"}/> } />
-            </Switch>
-        </div>
+        <Routes>
+            <Route exact path="/" element={ <LandingPage /> } />
+            <Route exact path="/home" element={ <Home/> } />
+            <Route exact path="/home/:id" element={ <Detail /> } />
+            <Route exact path="/form" element={ <Form /> } />
+            <Route exact path="/edit/:id" element={ <EditRecipe /> } />
+            <Route exact path="/about" element={ <About /> } />
+            <Route path="/" element={ <NotFound subtitle={"Page not found!"} /> } />
+        </Routes>
     );
 }
 

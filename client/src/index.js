@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom'; // manipular DOM html
+import ReactDOM from 'react-dom/client'; // manipular DOM html
 import { Provider } from 'react-redux'; // guardar store
 import store from './redux/store/store.js'; // store global
 import { BrowserRouter } from 'react-router-dom'; // rutas
@@ -10,9 +10,11 @@ import axios from "axios";
 
 axios.defaults.baseURL = process.env.REACT_APP_API || "http://localhost:3001";
 
+const root = ReactDOM.createRoot(
+  document.getElementById('root')
+);
 
-
-ReactDOM.render(
+root.render(
   <React.StrictMode>
   <BrowserRouter>
     <Provider store={store}>
@@ -20,7 +22,6 @@ ReactDOM.render(
     </Provider>
       </BrowserRouter>
   </React.StrictMode>,
-  document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { addRecipe, getAllDiets, updateRecipe } from '../../redux/actions/actions.js';
 import { addDefaultSrc, postImageToCloudinary } from '../methods.js';
 import img_empty_recipe from "../../assets/img_err_recipe.png"
@@ -53,7 +53,7 @@ export default function CreateRecipe({id, toEdit}) {
 
     const dispatch = useDispatch();
     const diets = useSelector(state => state.diets);
-    const history = useHistory();
+    const navigate = useNavigate();
 
     useEffect(()=> {
         dispatch(getAllDiets());
@@ -344,7 +344,7 @@ export default function CreateRecipe({id, toEdit}) {
 
     function redirectTo(path){ 
         if(path){
-            history.push(path);
+            navigate(path);
         }       
     }
 

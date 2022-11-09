@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { deleteRecipe, saveAppPrefs } from '../../redux/actions/actions';
 import ic_delete from "../../assets/ic_delete.png"
 import ic_edit from "../../assets/ic_edit.png"
@@ -12,7 +12,7 @@ export default function RecipeCard({props}){
     //console.log(props);
 
     const dispatch = useDispatch();
-    const history = useHistory();
+    const navigate = useNavigate();
     
     let dietsFormat;
 
@@ -53,7 +53,7 @@ export default function RecipeCard({props}){
     // editar un elemento
     function editItem(){
         saveScrollY();
-        history.push(`/edit/${props.id}`);
+        navigate(`/edit/${props.id}`);
     }
 
     return (
