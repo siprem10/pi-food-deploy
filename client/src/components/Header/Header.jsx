@@ -8,7 +8,7 @@ import SearchBar from "../SearchBar/SearchBar.jsx";
 import Sort from "../Sort/Sort.jsx";
 import Filter from "../Filter/Filter.jsx";
 import HeaderLoading from "../HeaderLoading/HeaderLoading.jsx";
-import { myLinkedin } from "../methods.js";
+import { myLinkedin } from '../../utils/methods.js';
 import "./Header.css";
 
 export default function Header({loading, setPaginate}) {

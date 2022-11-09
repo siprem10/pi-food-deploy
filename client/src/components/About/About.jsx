@@ -11,7 +11,7 @@ import ic_css from "../../assets/ic_css.png";
 import ic_express from "../../assets/ic_express.png";
 import ic_nodejs from "../../assets/ic_nodejs.png";
 import ic_linkedin from "../../assets/ic_linkedin.png";
-import { myLinkedin, SetBodyImg } from '../methods.js';
+import { myLinkedin, SetBodyImg } from '../../utils/methods.js';
 import "./About.css";
 
 export default function About() {

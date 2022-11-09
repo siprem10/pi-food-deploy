@@ -5,7 +5,7 @@ import { deleteRecipe, saveAppPrefs } from '../../redux/actions/actions';
 import ic_delete from "../../assets/ic_delete.png"
 import ic_edit from "../../assets/ic_edit.png"
 import ic_heart from "../../assets/ic_heart4.png"
-import { addDefaultSrc } from "../methods.js"
+import { addDefaultSrc } from '../../utils/methods.js';
 import "./RecipeCard.css";
 
 export default function RecipeCard({props}){

@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { addRecipe, getAllDiets, updateRecipe } from '../../redux/actions/actions.js';
-import { addDefaultSrc, postImageToCloudinary } from '../methods.js';
+import { addDefaultSrc, postImageToCloudinary } from '../../utils/methods.js';
 import img_empty_recipe from "../../assets/img_err_recipe.png"
 import "./CreateRecipe.css"
 

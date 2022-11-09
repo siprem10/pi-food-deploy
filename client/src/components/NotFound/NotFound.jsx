@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ic_recipe from "../../assets/ic_recipe.png";
-import { SetBodyImg } from '../methods.js';
+import { SetBodyImg } from '../../utils/methods.js';
 import "./NotFound.css";
 
 export default function NotFound({subtitle}) {

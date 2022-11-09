@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import LoadingDetail from '../LoadingDetail/LoadingDetail';
 import NotFound from '../NotFound/NotFound';
-import { addDefaultSrc } from "../methods.js"
+import { addDefaultSrc } from '../../utils/methods.js';
 import "./RecipeDetail.css";
 
 export default function RecipeDetail({recipe, loading}){
