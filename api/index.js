@@ -8,7 +8,7 @@ require("dotenv").config();
 conn.sync({ force: false }).then(() => {
     preChargeDiets(); // lo desactivo
     preChargeRecipes(); // lo desactivo
-    server.listen(process.env.PORT, () => {
+    server.listen(process.env.PORT || 3000, () => {
         console.log(`%s listening at ${process.env.PORT}`);
     });
 });
