@@ -7,6 +7,7 @@
 .sortDiv{
     height: 31px;
     width: 214px;
+    z-index: 999;
 }
 
     /* lo que ocupa el 1ero */
